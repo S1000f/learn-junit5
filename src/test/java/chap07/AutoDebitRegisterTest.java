@@ -1,6 +1,7 @@
 package chap07;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static chap07.CardValidity.THEFT;
@@ -18,6 +19,7 @@ public class AutoDebitRegisterTest {
         register = new AutoDebitRegister(validator, repository);
     }
 
+    @Disabled
     @Test
     public void validCard() {
         AutoDebitReq req = new AutoDebitReq("user1","1234123412341234");
@@ -26,6 +28,7 @@ public class AutoDebitRegisterTest {
         assertEquals(VALID, registerResult.getValidity());
     }
 
+    @Disabled
     @Test
     public void theftCard() {
         AutoDebitReq req = new AutoDebitReq("user1","1234567890123456");
